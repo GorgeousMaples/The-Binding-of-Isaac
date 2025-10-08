@@ -1,0 +1,789 @@
+fileFormatVersion: 2
+guid: 6c9d17e657940cd4b8204864005d7799
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3213188160044553357
+    second: Pacer_0
+  - first:
+      213: 3742623369156444829
+    second: Pacer_1
+  - first:
+      213: 5353885326907303302
+    second: Pacer_2
+  - first:
+      213: -6564383774386008103
+    second: Pacer_3
+  - first:
+      213: -9041197818551904300
+    second: Pacer_4
+  - first:
+      213: 1193484758512256789
+    second: Pacer_5
+  - first:
+      213: 1367237998097848384
+    second: Pacer_6
+  - first:
+      213: -4953066449348941893
+    second: Pacer_7
+  - first:
+      213: 5842965241429202722
+    second: Pacer_8
+  - first:
+      213: 7114091707476761003
+    second: Pacer_9
+  - first:
+      213: -5059690388469070372
+    second: Pacer_10
+  - first:
+      213: 4367728591247557024
+    second: Pacer_11
+  - first:
+      213: -6381621255562938365
+    second: Pacer_12
+  - first:
+      213: 3736751711242208001
+    second: Pacer_13
+  - first:
+      213: -7713046701010772850
+    second: Pacer_14
+  - first:
+      213: -6906210294644605412
+    second: Pacer_15
+  - first:
+      213: -1580828264277871290
+    second: Pacer_16
+  - first:
+      213: 1355730945384667724
+    second: Pacer_17
+  - first:
+      213: 4597243760286407469
+    second: Pacer_18
+  - first:
+      213: 1066277869005939629
+    second: Pacer_19
+  - first:
+      213: 657178346933091925
+    second: Pacer_20
+  - first:
+      213: 7525265985062212991
+    second: Pacer_21
+  - first:
+      213: 5967773218802810688
+    second: Pacer_22
+  - first:
+      213: 952019615321415135
+    second: Pacer_23
+  - first:
+      213: -5239908593895842051
+    second: Pacer_24
+  - first:
+      213: -8615772675844530220
+    second: Pacer_25
+  - first:
+      213: -687773619050049770
+    second: Pacer_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pacer_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 166
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37bad0484667863d0800000000000000
+      internalID: -3213188160044553357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_1
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 166
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9245aeff1870f330800000000000000
+      internalID: 3742623369156444829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_2
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 166
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6856c76b652dc4a40800000000000000
+      internalID: 5353885326907303302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_3
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 163
+        width: 53
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9df426e9cbf96e4a0800000000000000
+      internalID: -6564383774386008103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_4
+      rect:
+        serializedVersion: 2
+        x: 167
+        y: 162
+        width: 15
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d75d218c76378280800000000000000
+      internalID: -9041197818551904300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 133
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51747f3801c109010800000000000000
+      internalID: 1193484758512256789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 100
+        width: 20
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 048d90027b769f210800000000000000
+      internalID: 1367237998097848384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_7
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 70
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb7a6a98e4c234bb0800000000000000
+      internalID: -4953066449348941893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_8
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 134
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22797520ee1661150800000000000000
+      internalID: 5842965241429202722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_9
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 101
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba954b347b45ab260800000000000000
+      internalID: 7114091707476761003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_10
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 70
+        width: 19
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd5c7d9266e58c9b0800000000000000
+      internalID: -5059690388469070372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_11
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 134
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a1c0a4330a4d9c30800000000000000
+      internalID: 4367728591247557024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_12
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 70
+        width: 19
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 308b613874def67a0800000000000000
+      internalID: -6381621255562938365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_13
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 102
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 103cc6a12eb9bd330800000000000000
+      internalID: 3736751711242208001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_14
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 134
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8c114214e0c5f490800000000000000
+      internalID: -7713046701010772850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_15
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 102
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1eff83e3563820a0800000000000000
+      internalID: -6906210294644605412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_16
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 70
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 645f1d8b115cf0ae0800000000000000
+      internalID: -1580828264277871290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_17
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 68
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4a58a2ac1680d210800000000000000
+      internalID: 1355730945384667724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_18
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 100
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2b90cdb7d0bccf30800000000000000
+      internalID: 4597243760286407469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_19
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 131
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da3a5fd821e2cce00800000000000000
+      internalID: 1066277869005939629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_20
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 67
+        width: 20
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55e76038934ce1900800000000000000
+      internalID: 657178346933091925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_21
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 38
+        width: 17
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7596f7fa8d1f6860800000000000000
+      internalID: 7525265985062212991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_22
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 38
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04fb4d6bf1ac1d250800000000000000
+      internalID: 5967773218802810688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_23
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 38
+        width: 20
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fdddf6ecbc0463d00800000000000000
+      internalID: 952019615321415135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_24
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 38
+        width: 20
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfe525565ea1847b0800000000000000
+      internalID: -5239908593895842051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_25
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 6
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4df15ce4660ae6880800000000000000
+      internalID: -8615772675844530220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pacer_26
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 6
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61f03a699898476f0800000000000000
+      internalID: -687773619050049770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Pacer_0: -3213188160044553357
+      Pacer_1: 3742623369156444829
+      Pacer_10: -5059690388469070372
+      Pacer_11: 4367728591247557024
+      Pacer_12: -6381621255562938365
+      Pacer_13: 3736751711242208001
+      Pacer_14: -7713046701010772850
+      Pacer_15: -6906210294644605412
+      Pacer_16: -1580828264277871290
+      Pacer_17: 1355730945384667724
+      Pacer_18: 4597243760286407469
+      Pacer_19: 1066277869005939629
+      Pacer_2: 5353885326907303302
+      Pacer_20: 657178346933091925
+      Pacer_21: 7525265985062212991
+      Pacer_22: 5967773218802810688
+      Pacer_23: 952019615321415135
+      Pacer_24: -5239908593895842051
+      Pacer_25: -8615772675844530220
+      Pacer_26: -687773619050049770
+      Pacer_3: -6564383774386008103
+      Pacer_4: -9041197818551904300
+      Pacer_5: 1193484758512256789
+      Pacer_6: 1367237998097848384
+      Pacer_7: -4953066449348941893
+      Pacer_8: 5842965241429202722
+      Pacer_9: 7114091707476761003
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
