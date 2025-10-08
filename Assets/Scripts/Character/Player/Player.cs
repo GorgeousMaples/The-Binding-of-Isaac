@@ -187,7 +187,6 @@ public class Player : Character, IShooter
         if (_isInvincible)
             return;
         ReduceHealth(damage);
-        Debug.Log("血量: " + Health + " 护甲: " + Shield);
         UIManager.Instance.UpdatePlayerHp();
         // 受击闪烁后进入无敌时间
         StartCoroutine(AttackedRoutine());

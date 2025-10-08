@@ -23,13 +23,14 @@ public class RoomMap
     // 随机数生成器
     private readonly System.Random _rand = new();
     
-    public RoomMap(Level level, int targetRoomCount)
+    public RoomMap(Level level, int targetRoomCount, out RoomNode currentRoomNode)
     {
         _level = level;
         _targetRoomCount = targetRoomCount;
         // 创建起始房间节点
         var startRoomNode = new RoomNode(_level.NewRoom());
         startRoomNode.Room.type = RoomType.Start;
+        currentRoomNode = startRoomNode;
         _pendingRooms.Add(startRoomNode.Room);
         // 房间节点和坐标双向绑定
         _map.Add((0, 0), startRoomNode);
@@ -97,7 +98,7 @@ public class RoomMap
         // 初始化房间
         foreach (var room in _pendingRooms)
         {
-            room.UseLayout();
+            room.InitializeLayout();
         }
         
         return true;

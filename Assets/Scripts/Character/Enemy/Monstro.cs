@@ -33,6 +33,11 @@ public class Monstro : Enemy
         Initialize();
     }
 
+    public override void OnKilled()
+    {
+        gameObject.SetActive(false);
+    }
+
     private void FixedUpdate()
     {
         JumpMove();

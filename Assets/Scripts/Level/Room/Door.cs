@@ -108,6 +108,8 @@ public class Door : Obstacle
             Camera.transform.position = Vector3.Lerp(originPosition, targetPosition, clock.t);
             yield return null;
         }
+        // 记录玩家移动的信息
+        GameManager.Instance.level.OnPlayerMoveToNextRoom(direction);
     }
 
     // 设置门样式

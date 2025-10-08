@@ -15,8 +15,6 @@ public class Heart : MonoBehaviour
     public Image image;
     // 类型
     private HeartType _type;
-    
-
 
     // 设置血量样式
     public void SetStyle(HeartType type)
