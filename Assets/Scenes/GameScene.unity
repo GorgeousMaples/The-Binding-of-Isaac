@@ -511,6 +511,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7075308739030015116, guid: 91a2a03db26d18a438155dee075cc40d, type: 3}
+      propertyPath: heartIconPrefab
+      value: 
+      objectReference: {fileID: 1565935912097297213, guid: 2b56fd4651fe0d740adbfc1a0ba10b91, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

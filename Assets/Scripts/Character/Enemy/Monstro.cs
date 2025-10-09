@@ -95,9 +95,9 @@ public class Monstro : Boss
     private void OnCollisionEnter2D(Collision2D collision)
     {
         // 判断发生体积碰撞的是否是玩家
-        if (IsAttackedPlayer(collision.gameObject))
+        if (GameManager.IsAttackedPlayer(collision.gameObject))
         {
-            Player.OnAttacked(damage, MoveVector);
+            Player.OnAttacked(Damage, Vector2.zero);
         }
     }
 }

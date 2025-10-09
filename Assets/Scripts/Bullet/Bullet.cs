@@ -6,7 +6,7 @@ using UnityEngine;
 /**
  * 子弹抽象类
  */
-public abstract class Bullet : MonoBehaviour
+public abstract class Bullet : MonoBehaviour, IHazard
 {
     // 是否被销毁
     protected bool IsDestroy = false;
@@ -23,11 +23,12 @@ public abstract class Bullet : MonoBehaviour
     
     // —— 抽象属性 ——
     // 基础伤害
-    protected abstract int Damage { get; }
-    // 发射者
-    protected abstract IShooter Shooter { get; }
+    public abstract int Damage { get; }
+    // 攻击方法
+    public abstract void Attack(GameObject gameObject);
+
     // 子弹池
-    protected BulletPool BulletPool => Shooter.BulletPool;
+    protected abstract BulletPool BulletPool { get; }
 
     // 初始化
     public abstract void Initialize();

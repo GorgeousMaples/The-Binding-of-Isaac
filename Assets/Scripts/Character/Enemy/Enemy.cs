@@ -4,7 +4,7 @@ using UnityEngine;
 public abstract class Enemy: Character
 {
     // 攻击伤害
-    protected int damage = 1;
+    protected int Damage = 1;
     // 玩家实例
     protected Player Player => GameManager.Instance.player;
     // 敌人移动向量
@@ -15,8 +15,8 @@ public abstract class Enemy: Character
 
     // 是否被击杀
     public bool IsKilled { get; protected set; }
-
-    protected virtual void Update()
+    
+    protected override void Update()
     {
         base.Update();
         if (Health == 0)
@@ -30,8 +30,7 @@ public abstract class Enemy: Character
     // 被击杀时的钩子函数
     protected abstract void OnKilled();
     
-    // 是否接触到的目标是玩家
-    protected bool IsAttackedPlayer(GameObject target) => target.GetComponent<Player>() != null;
+
     
     // 简单追踪算法
     // 适用于没有障碍物的地形或者可以飞行的敌人

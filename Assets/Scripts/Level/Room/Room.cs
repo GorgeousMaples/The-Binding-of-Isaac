@@ -16,6 +16,10 @@ public class Room : MonoBehaviour
     // 宽度
     public static readonly float Width = 4.68f;
     
+    // 单位坐标长度（以房间中心为原点，长进行 8 等分，宽进行 6 等分得到的长度）
+    private static readonly float UnitLength = 5.42f / 8;
+    private static readonly float UnitWidth = 3.05f / 8;
+    
     [HideInInspector]
     // 房间类型
     public RoomType type;
@@ -93,19 +97,29 @@ public class Room : MonoBehaviour
         // 对于初始房间，还需要初始化 tip
         if (type == RoomType.Start)
             tip.sprite = _layout.tip;
+        // 初始化障碍物
+        if (_layout.obstacleList.Count != 0)
+        {
+            foreach (var pair in _layout.obstacleList)
+            {
+                var obstacle = Instantiate(pair.gameObject, transform);
+                SetPosition(obstacle.transform, pair.position);
+            }
+        }
     }
 
     // 玩家第一次到的时候激活房间
     public void Activate()
     {
         IsActivated = true;
+        // 初始化怪物
         if (_layout.enemyList.Count != 0)
         {
             foreach (var pair in _layout.enemyList)
             {
                 var enemy = GameManager.Instance.InstantiateEnemy(pair.gameObject);
                 enemy.Killed += OnEnemyKilled;
-                enemy.transform.position = transform.position;
+                SetPosition(enemy.transform, pair.position);
             }
             CloseDoor();
         }
@@ -122,6 +136,13 @@ public class Room : MonoBehaviour
         }
     }
 
+    // 将生成的物体移到正确的位置上
+    private void SetPosition(Transform obj, Vector2Int pos)
+    {
+        var distance = new Vector3(UnitLength * pos.x, UnitWidth * pos.y, 0);
+        obj.position = transform.position + distance;
+    }
+    
     // 当玩家清除房间后
     private void OnClearRoom()
     {

@@ -9,7 +9,7 @@ public enum HeartType
 }
 
 // 血量图标
-public class Heart : MonoBehaviour
+public class HeartIcon : MonoBehaviour
 {
     // 图标
     public Image image;

@@ -1,4 +1,5 @@
-﻿public interface IPickupable
+﻿// 可拾取物
+public interface IPickupable
 {
-        
+    void Pickup();
 }

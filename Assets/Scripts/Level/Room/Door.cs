@@ -42,9 +42,6 @@ public class Door : Obstacle
     // 房间样式的字典
     private readonly Dictionary<RoomType, DoorStyle> _styleDict = new();
     
-    // 不可破坏
-    public bool IsDestructible => false;
-    
     private void Awake()
     {
         _collider = GetComponent<Collider2D>();

@@ -320,7 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   head: {fileID: 2282167212987616328}
   body: {fileID: 8887459544305419152}
-  _rigidbody: {fileID: 7563883003750389829}
+  bombPrefab: {fileID: 3453768651253651409, guid: 831efc19c95214e46aaa6908cf06d8b6, type: 3}
   tearPool: {fileID: 3972551321661423234}
 --- !u!212 &-7447152092153576208
 SpriteRenderer:

@@ -4,19 +4,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Character, IShooter
+public class Player : Character
 {
     [Header("自身属性")]
     // 角色头部
     public Transform head;
     // 角色身体
     public Transform body;
+    // 炸弹预制体
+    public Bomb bombPrefab;
     
     [Header("子弹池")]
     // 子弹池
     public BulletPool tearPool;
-    // 子弹池属性（实现了 IShooter 中的接口）
-    public BulletPool BulletPool => tearPool;
+    
+    // —— 炸弹相关 ——
+    public int BombCount { get; private set; }
+    // 炸弹池
+    [HideInInspector] public Pool<Bomb> boomPool;
     
     // 渲染器与动画器
     private Rigidbody2D _rigidbody;
@@ -54,6 +59,11 @@ public class Player : Character, IShooter
         {
             Dead?.Invoke();
         }
+        // 按 E 安置炸弹
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            UseBomb();
+        }
     }
 
     private void FixedUpdate()
@@ -88,16 +98,8 @@ public class Player : Character, IShooter
     {
         base.Initialize();
         Shield = 6;
-    }
-
-    // 实现 IShooter 中的方法 
-    public bool IsDamageable(GameObject gameObject, out IAttackable attackedObject)
-    {
-        // 判断游戏组件上是否挂载了 Enemy 脚本
-        var enemy = gameObject.GetComponent<Enemy>();
-        // 将获取的敌人实例返回
-        attackedObject = enemy;
-        return enemy != null;
+        BombCount = 10;
+        boomPool = new Pool<Bomb>(bombPrefab, GameManager.Instance.transform, 2);
     }
 
     // 判断某游戏物体是否是玩家
@@ -156,12 +158,10 @@ public class Player : Character, IShooter
         // 子弹主轴基础力
         int force = 120;
         
-        // 从子弹池中获取子弹
-        var bullet = tearPool.TakeBullet();
+        // 从子弹池中获取子弹，并将位置移动到玩家头部
+        var bullet = tearPool.TakeBullet(head.position);
         // 子弹初始化
         bullet.Initialize();
-        // 将子弹位置移到玩家当前位置的头部
-        bullet.transform.position = head.position;
         
         // 根据基础方向计算合力向量
         var shootVector = baseVector * force + CorrectVector(baseVector);
@@ -190,6 +190,13 @@ public class Player : Character, IShooter
             _moveVector.x * (baseVector.x != 0 ? mainCorrectX : minorCorrect),
             _moveVector.y * (baseVector.y != 0 ? mainCorrectY : minorCorrect)
         ) * Speed * SpeedMultiple;
+    }
+
+    private void UseBomb()
+    {
+        if (BombCount <= 0) return;
+        // 将炸弹放置在当前位置并立刻引爆
+        boomPool.Take(transform.position).Boom();
     }
     
     // —— 角色受击相关 ——
@@ -241,7 +248,7 @@ public class Player : Character, IShooter
     private IEnumerator AttackedRoutine()
     {
         // 一定要这么写！只能开一个协程！不然这两个颜色会互相干扰！！！
-        yield return FlashRoutine(_headRenderer, _bodyRenderer);
+        yield return UIManager.FlashRoutine(_headRenderer, _bodyRenderer);
         yield return InvincibleRoutine();
     }
 }

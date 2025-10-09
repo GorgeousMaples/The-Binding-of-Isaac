@@ -7,17 +7,17 @@ using UnityEngine;
 public class PlayerHP : MonoBehaviour
 {
     // 血量图标预制体
-    public Heart heartPrefab;
+    public HeartIcon heartIconPrefab;
     
     // 血量池
-    private Pool<Heart> _heartPool;
+    private Pool<HeartIcon> _heartPool;
     
     private Player Player => GameManager.Instance.player;
 
     public void Initialize()
     {
         var total = Mathf.CeilToInt(Player.MaxHealth *3 / 4f);
-        _heartPool = new Pool<Heart>(heartPrefab, transform, total);
+        _heartPool = new Pool<HeartIcon>(heartIconPrefab, transform, total);
         UpdateView();
     }
 

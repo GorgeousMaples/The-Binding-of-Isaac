@@ -75,4 +75,14 @@ public class GameManager : Singleton<GameManager>
         var originPos = mainCamera.transform.position;
         mainCamera.transform.position = new Vector3(0, 0, originPos.z);
     }
+    
+    // —— 体积碰撞工具方法 ——
+    // 接触到的目标是否是玩家
+    public static bool IsAttackedPlayer(GameObject target) => target.GetComponent<Player>() != null;
+    // 接触到的目标是否是敌人
+    public static bool IsAttackedEnemy(GameObject target, out IAttackable enemy)
+    {
+        enemy = target.GetComponent<Enemy>();
+        return enemy !=  null;
+    } 
 }

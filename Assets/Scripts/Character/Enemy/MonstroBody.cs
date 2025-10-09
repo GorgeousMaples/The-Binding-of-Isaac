@@ -8,7 +8,7 @@ public class MonstroBody : MonoBehaviour
 {
     public Monstro Monstro;
 
-    public void StartMoving() => Monstro.StartMoving();
+    private void StartMoving() => Monstro.StartMoving();
     
-    public void StopMoving() => Monstro.StopMoving();
+    private void StopMoving() => Monstro.StopMoving();
 }

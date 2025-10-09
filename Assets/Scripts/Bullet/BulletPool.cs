@@ -19,7 +19,7 @@ public class BulletPool : MonoBehaviour
         _pool = new Pool<Bullet>(bulletPrefab, transform);
     }
 
-    public Bullet TakeBullet() => _pool.Take();
+    public Bullet TakeBullet(Vector3 position = default) => _pool.Take(position);
     
     public void ReturnBullet(Bullet bullet) => _pool.Return(bullet);
 }

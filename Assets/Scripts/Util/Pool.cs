@@ -25,11 +25,11 @@ public class Pool<T> where T : MonoBehaviour
     {
         _prefab = prefab;
         _parent = parent;
-        AddToPool(DefaultSize);
+        AddToPool(size);
     }
 
-    // 取出子弹
-    public T Take()
+    // 取出对象
+    public T Take(Vector3 position = default)
     {
         // 若对象池中可用对象不够则先扩充
         if (_availablePool.Count <= 0)
@@ -38,12 +38,15 @@ public class Pool<T> where T : MonoBehaviour
         var obj = _availablePool.Dequeue();
         _activePool.Add(obj);
         obj.gameObject.SetActive(true);
+        // 如果调用者设置了坐标，就将对象移动到指定位置
+        if (position != default)
+            obj.transform.position = position;
         // 放到对象栏的最后一位
         obj.transform.SetAsLastSibling();
         return obj;
     }
 
-    // 回收子弹
+    // 回收对象
     public void Return(T obj)
     {
         _availablePool.Enqueue(obj);

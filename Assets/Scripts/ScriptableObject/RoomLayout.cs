@@ -26,13 +26,15 @@ public class RoomLayout : ScriptableObject
     {
         // 物品类型
         public T gameObject;
-        // 位置
-        public Vector2 position;
+        // 位置（横坐标区间为 [-3, 3]，纵坐标区间为 [-2, 2]）
+        public Vector2Int position;
 
-        public GameObjectWithPosition(T obj,  Vector2 pos)
+        public GameObjectWithPosition(T obj,  Vector2Int pos)
         {
             gameObject = obj;
-            position = pos;
+            var clampedX = Mathf.Clamp(pos.x, -3, 3);
+            var clampedY = Mathf.Clamp(pos.y, -2, 2);
+            position = new Vector2Int(clampedX, clampedY);
         }
     }
 }

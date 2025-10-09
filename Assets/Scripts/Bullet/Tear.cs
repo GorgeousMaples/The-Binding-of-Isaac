@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Tear : Bullet
 {
-    // 实现父类中的抽象属性
+    // —— 实现父类中的抽象属性 ——
     // 泪滴伤害
-    protected override int Damage => 1;
-    // 发射者（玩家）
-    protected override IShooter Shooter => GameManager.Instance.player;
+    public override int Damage => 1;
+    // 子弹池
+    protected override BulletPool BulletPool => GameManager.Instance.player.tearPool;
 
     public override void Initialize()
     {
@@ -54,17 +54,25 @@ public class Tear : Bullet
         BulletPool.ReturnBullet(this);
     }
 
+    public override void Attack(GameObject gameObject)
+    {
+        // 获取目标组件
+        var target = gameObject.GetComponent<IAttackable>();
+        // 如果对象为敌人或者火炬木则攻击
+        if (target is Enemy or FireWood)
+        {
+            target.OnAttacked(Damage);
+            Destroy();
+        }
+        else if (Obstacle.IsObstacle(gameObject))
+        {
+            Destroy();
+        }
+    }
+    
     // 触发体积碰撞
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Shooter.IsDamageable(collision.gameObject, out var attackedObject))
-        {
-            attackedObject.OnAttacked(Damage);
-            Destroy();
-        }
-        else if (Obstacle.IsObstacle(collision.gameObject))
-        {
-             Destroy();
-        }
+        Attack(collision.gameObject);
     }
 }

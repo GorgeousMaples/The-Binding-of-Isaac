@@ -15,7 +15,7 @@ public abstract class Character : MonoBehaviour, IAttackable
     private float _speed;
     
     // 最大血量
-    public int MaxHealth { get; set; }
+    public int MaxHealth { get; private set; }
     // 血量（HP）
     public int Health
     {
@@ -47,7 +47,7 @@ public abstract class Character : MonoBehaviour, IAttackable
     public virtual void Initialize()
     {
         MaxHealth = 10;
-        Health = 10;
+        Health = MaxHealth;
         Shield = 0;
         Speed = 1f;
         SpeedMultiple = 1f;
@@ -56,29 +56,9 @@ public abstract class Character : MonoBehaviour, IAttackable
     // 被攻击时的闪烁效果
     protected void FlashOnDamage(params SpriteRenderer[] renderers)
     {
-        StartCoroutine(FlashRoutine(renderers));
+        StartCoroutine(UIManager.FlashRoutine(renderers));
     }
     
-    protected IEnumerator FlashRoutine(params SpriteRenderer[] renderers)
-    {
-        // 原来所有颜色的数组
-        var originalColors = new Color[renderers.Length];
-        // 受击颜色为红色
-        var red = new Color(1, 0.75f, 0.75f, 1);
-        for (var i = 0; i < renderers.Length; i++)
-        {
-            // originalColors[i] = renderers[i].color;
-            originalColors[i] = Color.white;
-            renderers[i].color = red;
-        }
-        yield return new WaitForSeconds(0.3f);
-        // 恢复为原始颜色
-        for (var i = 0; i < renderers.Length; i++)
-        {
-            renderers[i].color = originalColors[i];
-        }
-    }
-
     protected void ReduceHealth(int damage)
     {
         // 攻击剩余点数
