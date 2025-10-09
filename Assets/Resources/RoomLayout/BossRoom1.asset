@@ -16,7 +16,6 @@ MonoBehaviour:
   floor: {fileID: 21300018, guid: 6b28a663d85beb14fb46c9dd0fbd0cde, type: 3}
   tip: {fileID: 0}
   enemyList:
-  - gameObject: {fileID: 6178534795571141985, guid: 881a8fdd1fe5c09479da172d5e987975, type: 3}
+  - gameObject: {fileID: 3549162912510632478, guid: 881a8fdd1fe5c09479da172d5e987975, type: 3}
     position: {x: 0, y: 0}
   obstacleList: []
-  propList: []

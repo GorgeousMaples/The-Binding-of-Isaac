@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
@@ -22,12 +23,7 @@ public class GameManager : Singleton<GameManager>
 
     protected override void OnAwake()
     {
-        // 根据预制体创建玩家实例
-        player = Instantiate(playerPrefab);
-        player.Initialize();
-        // 根据预制体创建关卡实例
-        level = Instantiate(levelPrefab);
-        level.Initialize();
+        Initialize();
     }
 
     private void Update()
@@ -37,5 +33,46 @@ public class GameManager : Singleton<GameManager>
         {
             Application.Quit();
         }
+    }
+
+    private void Initialize()
+    {
+        // 根据预制体创建玩家实例
+        player = Instantiate(playerPrefab, transform);
+        player.Initialize();
+        // 订阅事件，角色死亡时触发重启操作
+        player.Dead += RestartGame;
+        // 根据预制体创建关卡实例
+        level = Instantiate(levelPrefab);
+        level.Initialize();
+    }
+
+    // 实例化敌人（让所有的敌人都归 GameManager 控制）
+    public Enemy InstantiateEnemy(Enemy enemyPrefab)
+    {
+        var enemy = Instantiate(enemyPrefab, transform);
+        return enemy;
+    }
+    
+    private void RestartGame()
+    {
+        StartCoroutine(RestartRoutine());
+    }
+
+    private IEnumerator RestartRoutine()
+    {
+        // 先销毁原有的物件
+        Destroy(player.gameObject);
+        player = null;
+        Destroy(level.gameObject);
+        level = null;
+        // 等待一帧再执行，因为销毁操作实在帧末执行的
+        yield return null;
+        Initialize();
+        // 重绘角色血量
+        UIManager.Instance.UpdatePlayerHp();
+        // 移动主相机
+        var originPos = mainCamera.transform.position;
+        mainCamera.transform.position = new Vector3(0, 0, originPos.z);
     }
 }

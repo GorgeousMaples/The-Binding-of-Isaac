@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Monstro : Enemy
+public class Monstro : Boss
 {
+    [SerializeField]
     // 刚体（父组件）
     private Rigidbody2D _rigidbody;
+    [SerializeField]
     // 渲染器
     private SpriteRenderer _renderer;
+    [SerializeField]
     // 体积碰撞
     private Collider2D _collider;
     
@@ -20,21 +23,15 @@ public class Monstro : Enemy
     // 最大修正系数
     private const float MaxMoveCorrect = 1.5f;
     
-    protected override void OnAwake()
+    protected override void Start()
     {
-        _renderer = GetComponent<SpriteRenderer>();
-        // 这里获取父组件上的刚体
-        _rigidbody = GetComponentInParent<Rigidbody2D>();
-        _collider = GetComponent<Collider2D>();
-    }
-    
-    protected override void OnStart()
-    {
+        base.Start();
         Initialize();
     }
-
-    public override void OnKilled()
+    
+    protected override void OnKilled()
     {
+        base.OnKilled();
         gameObject.SetActive(false);
     }
 
@@ -61,7 +58,7 @@ public class Monstro : Enemy
     public void StartMoving()
     {
         // （0,, 0.31）是修正量，因为怪物和玩家的支撑轴不一样
-        var distanceVector = SimpleTrace(transform.parent.position, new Vector2(0, -0.31f));
+        var distanceVector = SimpleTrace(transform.position, new Vector2(0, -0.31f));
         // 归一化后就是移动向量
         MoveVector = distanceVector.normalized;
         // 计算模长得到玩家与怪物之间的距离

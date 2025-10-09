@@ -12,12 +12,11 @@ public class PlayerHP : MonoBehaviour
     // 血量池
     private Pool<Heart> _heartPool;
     
-    private Player _player;
+    private Player Player => GameManager.Instance.player;
 
     public void Initialize()
     {
-        _player = GameManager.Instance.player;
-        var total = Mathf.CeilToInt(_player.MaxHealth *3 / 4f);
+        var total = Mathf.CeilToInt(Player.MaxHealth *3 / 4f);
         _heartPool = new Pool<Heart>(heartPrefab, transform, total);
         UpdateView();
     }
@@ -26,23 +25,23 @@ public class PlayerHP : MonoBehaviour
     public void UpdateView()
     {
         _heartPool.Reset();
-        for (var i = 0; i < _player.Health / 2; i++)
+        for (var i = 0; i < Player.Health / 2; i++)
         {
             _heartPool.Take().SetStyle(HeartType.Full);
         }
-        for (var i = 0; i < _player.Health % 2; i++)
+        for (var i = 0; i < Player.Health % 2; i++)
         {
             _heartPool.Take().SetStyle(HeartType.Half);
         }
-        for (var i = 0; i < (_player.MaxHealth - _player.Health) / 2; i++)
+        for (var i = 0; i < (Player.MaxHealth - Player.Health) / 2; i++)
         {
             _heartPool.Take().SetStyle(HeartType.Void);
         }
-        for (var i = 0; i < _player.Shield / 2; i++)
+        for (var i = 0; i < Player.Shield / 2; i++)
         {
             _heartPool.Take().SetStyle(HeartType.Soul);
         }
-        for (var i = 0; i < _player.Shield % 2; i++)
+        for (var i = 0; i < Player.Shield % 2; i++)
         {
             _heartPool.Take().SetStyle(HeartType.SoulHalf);
         }

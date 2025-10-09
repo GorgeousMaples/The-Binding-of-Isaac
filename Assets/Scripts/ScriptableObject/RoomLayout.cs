@@ -14,22 +14,22 @@ public class RoomLayout : ScriptableObject
     public Sprite tip;
     
     // 敌人列表
-    public List<GameObjectWithPosition> enemyList = new();
+    public List<GameObjectWithPosition<Enemy>> enemyList = new();
     // 障碍物列表
-    public List<GameObjectWithPosition> obstacleList = new();
-    // 道具列表
-    public List<GameObjectWithPosition> propList = new();
+    public List<GameObjectWithPosition<Obstacle>> obstacleList = new();
+    // // 道具列表
+    // public List<GameObjectWithPosition> propList = new();
 
     // 游戏物品与位置
     [System.Serializable]
-    public class GameObjectWithPosition
+    public class GameObjectWithPosition<T> where T : MonoBehaviour
     {
         // 物品类型
-        public GameObject gameObject;
+        public T gameObject;
         // 位置
         public Vector2 position;
 
-        public GameObjectWithPosition(GameObject obj,  Vector2 pos)
+        public GameObjectWithPosition(T obj,  Vector2 pos)
         {
             gameObject = obj;
             position = pos;

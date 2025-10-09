@@ -131,7 +131,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 114454723259645162, guid: 76cbda2042af5e24ea5e8fc2187cf9d1, type: 3}
-  size: 5
 --- !u!1 &5730168399819335241
 GameObject:
   m_ObjectHideFlags: 0
@@ -319,9 +318,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24866a00713384a479e06c39bd6f391d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tearPool: {fileID: 3972551321661423234}
   head: {fileID: 2282167212987616328}
   body: {fileID: 8887459544305419152}
+  _rigidbody: {fileID: 7563883003750389829}
+  tearPool: {fileID: 3972551321661423234}
 --- !u!212 &-7447152092153576208
 SpriteRenderer:
   m_ObjectHideFlags: 0

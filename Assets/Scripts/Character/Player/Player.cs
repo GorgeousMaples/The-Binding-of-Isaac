@@ -19,6 +19,7 @@ public class Player : Character, IShooter
     public BulletPool BulletPool => tearPool;
     
     // 渲染器与动画器
+    private Rigidbody2D _rigidbody;
     private SpriteRenderer _headRenderer;
     private SpriteRenderer _bodyRenderer;
     private Animator _headAnimator;
@@ -42,9 +43,17 @@ public class Player : Character, IShooter
     // 无敌时间计时器
     private readonly Clock _invincibleClock = new(3f);
     
+    // 死亡事件
+    public event Action Dead;
+    
     private void Update()
     {
         UpdateShoot();
+        // 角色死亡事件判定
+        if (Health == 0)
+        {
+            Dead?.Invoke();
+        }
     }
 
     private void FixedUpdate()
@@ -53,8 +62,10 @@ public class Player : Character, IShooter
     }
     
     // 获取角色组件
-    protected override void OnAwake()
+    protected override void Awake()
     {
+        base.Awake();
+        _rigidbody = GetComponent<Rigidbody2D>();
         _headRenderer = head.GetComponent<SpriteRenderer>();
         _bodyRenderer = body.GetComponent<SpriteRenderer>();
         _headAnimator = head.GetComponent<Animator>();
@@ -62,8 +73,9 @@ public class Player : Character, IShooter
     }
 
     // 角色属性初始化
-    protected override void OnStart()
+    protected override void Start()
     {
+        base.Start();
         _shootActions =  new Dictionary<KeyCode, Action> {
             { KeyCode.UpArrow,    () => ShootTear("Up", new Vector2(0, 1)) },
             { KeyCode.DownArrow,  () => ShootTear("Down", new Vector2(0, -1)) },
@@ -105,7 +117,7 @@ public class Player : Character, IShooter
         // 计算向量方向并归一化（模长变为 1）
         _moveVector = new Vector2(x, y).normalized;
         // 实现速度平滑
-        Rigidbody.velocity = _moveVector * ((1.0f + 0.5f * Speed) * SpeedMultiple * 1.7f);
+        _rigidbody.velocity = _moveVector * ((1.0f + 0.5f * Speed) * SpeedMultiple * 1.7f);
         
         // 设置身体运动动画
         _bodyAnimator.SetFloat("Speed", _moveVector.magnitude);

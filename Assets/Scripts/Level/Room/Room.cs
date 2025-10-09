@@ -38,6 +38,9 @@ public class Room : MonoBehaviour
     // 房间样式的字典
     private Dictionary<RoomType, List<RoomLayout>> _roomTypeDict;
     
+    // 已击杀敌人数
+    private int _enemyKilledCount = 0;
+    
     // 房间所有的可用门列表（就是显示出来的门）
     private List<Door>  _doors = new();
     
@@ -75,21 +78,6 @@ public class Room : MonoBehaviour
                 g => g.ToList()
             );
     }
-
-    // 玩家第一次到的时候激活房间
-    public void Activate()
-    {
-        IsActivated = true;
-        if (_layout.enemyList.Count != 0)
-        {
-            foreach (var pair in _layout.enemyList)
-            {
-                var enemy = Instantiate(pair.gameObject, transform);
-                enemy.transform.position = transform.position;
-            }
-            CloseDoor();
-        }
-    }
     
     // 初始化房间样式
     public void InitializeLayout()
@@ -105,6 +93,40 @@ public class Room : MonoBehaviour
         // 对于初始房间，还需要初始化 tip
         if (type == RoomType.Start)
             tip.sprite = _layout.tip;
+    }
+
+    // 玩家第一次到的时候激活房间
+    public void Activate()
+    {
+        IsActivated = true;
+        if (_layout.enemyList.Count != 0)
+        {
+            foreach (var pair in _layout.enemyList)
+            {
+                var enemy = GameManager.Instance.InstantiateEnemy(pair.gameObject);
+                enemy.Killed += OnEnemyKilled;
+                enemy.transform.position = transform.position;
+            }
+            CloseDoor();
+        }
+    }
+    
+    // 击杀敌人钩子
+    private void OnEnemyKilled()
+    {
+        _enemyKilledCount++;
+        // 代表已经清除这个房间里所有的怪
+        if (_enemyKilledCount == _layout.enemyList.Count)
+        {
+            OnClearRoom();
+        }
+    }
+
+    // 当玩家清除房间后
+    private void OnClearRoom()
+    {
+        OpenDoor();
+        // 未来还会有其他逻辑
     }
     
     // 激活特定方向的门

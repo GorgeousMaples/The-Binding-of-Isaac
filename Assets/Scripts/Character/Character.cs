@@ -14,9 +14,6 @@ public abstract class Character : MonoBehaviour, IAttackable
     private int _shield;
     private float _speed;
     
-    // —— 角色基础组件 ——
-    protected Rigidbody2D Rigidbody;
-    
     // 最大血量
     public int MaxHealth { get; set; }
     // 血量（HP）
@@ -41,22 +38,10 @@ public abstract class Character : MonoBehaviour, IAttackable
     // 速度增益
     public float SpeedMultiple { get; set; }
     
-    // —— 钩子函数 ——
-    // 在 Awake 方法中执行
-    protected abstract void OnAwake();
-    // 在 Start 方法中执行
-    protected abstract void OnStart();
-
-    private void Awake()
-    {
-        Rigidbody = GetComponent<Rigidbody2D>();
-        OnAwake();
-    }
-    
-    private void Start()
-    {
-        OnStart();
-    }
+    // 改为虚函数，子类重写时需要加 base
+    protected virtual void Awake() {}
+    protected virtual void Start() {}
+    protected virtual void Update() {}
 
     // 角色初始化
     public virtual void Initialize()

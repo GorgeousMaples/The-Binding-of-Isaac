@@ -50,7 +50,8 @@
     <Compile Include="Assets\Scripts\Character\Enemy\Monstro.cs" />
     <Compile Include="Assets\Scripts\Bullet\Bullet.cs" />
     <Compile Include="Assets\Scripts\Level\Room\Floor.cs" />
-    <Compile Include="Assets\Scripts\Character\Interface\IShooter.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\Boss.cs" />
+    <Compile Include="Assets\Scripts\Interface\IAttackable.cs" />
     <Compile Include="Assets\Scripts\UI\PlayerHP.cs" />
     <Compile Include="Assets\Scripts\Manager\GameManager.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\HeartStyle.cs" />
@@ -62,13 +63,15 @@
     <Compile Include="Assets\Scripts\Level\Obstacle\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Character\Character.cs" />
     <Compile Include="Assets\Scripts\Util\Clock.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\MonstroBody.cs" />
     <Compile Include="Assets\Scripts\Util\DirectionUtil.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\DoorStyle.cs" />
     <Compile Include="Assets\Scripts\Character\Enemy\Enemy.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\RoomLayout.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Player.cs" />
-    <Compile Include="Assets\Scripts\Character\Interface\IAttackable.cs" />
     <Compile Include="Assets\Scripts\Level\Room\RoomMap.cs" />
+    <Compile Include="Assets\Scripts\Interface\IPickupable.cs" />
+    <Compile Include="Assets\Scripts\Interface\IShooter.cs" />
     <Compile Include="Assets\Scripts\Bullet\BulletPool.cs" />
     <Compile Include="Assets\Scripts\Util\Singleton.cs" />
     <Compile Include="Assets\Scripts\Level\Level.cs" />

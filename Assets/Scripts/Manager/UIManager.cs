@@ -2,10 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : Singleton<UIManager>
 {
-    public PlayerHP playerHP;
+    // 玩家血条
+    public PlayerHP playerHp;
+    // Boss血条
+    public Slider bossHp;
 
     // 血量样式的字典
     public static readonly Dictionary<HeartType, HeartStyle> HeartStyleDict = new();
@@ -19,11 +23,11 @@ public class UIManager : Singleton<UIManager>
 
     private void Start()
     {
-        playerHP.Initialize();
+        playerHp.Initialize();
     }
 
     public void UpdatePlayerHp()
     {
-        playerHP.UpdateView();
+        playerHp.UpdateView();
     }
 }
