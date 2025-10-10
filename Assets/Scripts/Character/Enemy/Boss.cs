@@ -6,14 +6,14 @@ public abstract class Boss : Enemy
 {
     private Slider Slider => UIManager.Instance.bossHp;
 
-    protected override void Awake()
+    protected override void Start()
     {
-        base.Awake();
+        base.Start();
         Slider.gameObject.SetActive(true);
         // 把血条拉满
         Slider.value = 1;
     }
-
+    
     protected override void Update()
     {
         base.Update();

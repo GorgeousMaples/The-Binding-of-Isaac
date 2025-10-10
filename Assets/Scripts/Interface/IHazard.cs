@@ -14,5 +14,5 @@ public interface IHazard
      * 该方法一般都在体积碰撞事件函数中使用
      * 一般都需要获取 IAttackable 实例，判断该对象是否是自己能攻击的对象，是则调用其 OnAttack 方法
      */
-    void Attack(GameObject gameObject);
+    void Attack(GameObject target);
 }

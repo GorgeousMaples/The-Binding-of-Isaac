@@ -73,6 +73,7 @@
     <Compile Include="Assets\Scripts\Level\Obstacle\FireWood.cs" />
     <Compile Include="Assets\Scripts\ScriptableObject\RoomLayout.cs" />
     <Compile Include="Assets\Scripts\Character\Player\Player.cs" />
+    <Compile Include="Assets\Scripts\Character\Enemy\Fly.cs" />
     <Compile Include="Assets\Scripts\Level\Room\RoomMap.cs" />
     <Compile Include="Assets\Scripts\UI\HeartIcon.cs" />
     <Compile Include="Assets\Scripts\Interface\IPickupable.cs" />

@@ -33,8 +33,6 @@ public class Player : Character
     // —— 角色移动相关 ——
     // 是否允许移动
     private bool _isAllowedMove = true;
-    // 移动向量
-    private Vector2 _moveVector;
     
     // —— 角色发射泪滴相关 ——
     // 发射按键字典
@@ -100,6 +98,7 @@ public class Player : Character
         Shield = 6;
         BombCount = 10;
         boomPool = new Pool<Bomb>(bombPrefab, GameManager.Instance.transform, 2);
+        MoveCorrect = 1.7f;
     }
 
     // 判断某游戏物体是否是玩家
@@ -117,19 +116,18 @@ public class Player : Character
         var x = Input.GetAxis("Horizontal");
         var y = Input.GetAxis("Vertical");
         // 计算向量方向并归一化（模长变为 1）
-        _moveVector = new Vector2(x, y).normalized;
-        // 实现速度平滑
-        _rigidbody.velocity = _moveVector * ((1.0f + 0.5f * Speed) * SpeedMultiple * 1.7f);
+        MoveVector = new Vector2(x, y).normalized;
+        _rigidbody.velocity = Velocity;
         
         // 设置身体运动动画
-        _bodyAnimator.SetFloat("Speed", _moveVector.magnitude);
+        _bodyAnimator.SetFloat("Speed", MoveVector.magnitude);
         _bodyRenderer.flipX = x < 0;
         _bodyAnimator.SetFloat("MoveX", Mathf.Abs(x));
         _bodyAnimator.SetFloat("MoveY", Mathf.Abs(y));
         
         
         // 设置头部运动动画
-        _headAnimator.SetFloat("Speed", _moveVector.magnitude);
+        _headAnimator.SetFloat("Speed", MoveVector.magnitude);
         _headRenderer.flipX = x < 0;
         _headAnimator.SetFloat("MoveX", Mathf.Abs(x));
         _headAnimator.SetFloat("MoveY", y);
@@ -182,13 +180,13 @@ public class Player : Character
         // 次轴修正
         var minorCorrect = 50;
         // 横向主轴修正
-        var mainCorrectX = _moveVector.x * baseVector.x > 0 ? sameCorrect : oppositeCorrect;
+        var mainCorrectX = MoveVector.x * baseVector.x > 0 ? sameCorrect : oppositeCorrect;
         // 纵向主轴修正
-        var mainCorrectY = _moveVector.y * baseVector.y > 0 ? sameCorrect : oppositeCorrect;
+        var mainCorrectY = MoveVector.y * baseVector.y > 0 ? sameCorrect : oppositeCorrect;
         
         return new Vector2(
-            _moveVector.x * (baseVector.x != 0 ? mainCorrectX : minorCorrect),
-            _moveVector.y * (baseVector.y != 0 ? mainCorrectY : minorCorrect)
+            MoveVector.x * (baseVector.x != 0 ? mainCorrectX : minorCorrect),
+            MoveVector.y * (baseVector.y != 0 ? mainCorrectY : minorCorrect)
         ) * Speed * SpeedMultiple;
     }
 

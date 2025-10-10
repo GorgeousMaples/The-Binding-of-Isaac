@@ -15,7 +15,7 @@ public abstract class Character : MonoBehaviour, IAttackable
     private float _speed;
     
     // 最大血量
-    public int MaxHealth { get; private set; }
+    public int MaxHealth { get; protected set; }
     // 血量（HP）
     public int Health
     {
@@ -29,6 +29,7 @@ public abstract class Character : MonoBehaviour, IAttackable
         get => _shield;
         protected set => _shield = value >= 0 ? value : 0;
     }
+    // —— 角色移动相关 ——
     // 速度
     public float Speed
     {
@@ -37,10 +38,17 @@ public abstract class Character : MonoBehaviour, IAttackable
     }
     // 速度增益
     public float SpeedMultiple { get; set; }
+    // 移动向量
+    protected Vector2 MoveVector;
+    // 移动修正量
+    protected float MoveCorrect = 1f;
+    // 速度矢量
+    protected Vector2 Velocity => MoveVector * ((1.0f + 0.5f * Speed) * SpeedMultiple * MoveCorrect);
     
     // 改为虚函数，子类重写时需要加 base
     protected virtual void Awake() {}
-    protected virtual void Start() {}
+
+    protected virtual void Start() { }
     protected virtual void Update() {}
 
     // 角色初始化
